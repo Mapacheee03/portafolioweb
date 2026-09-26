@@ -4,6 +4,7 @@ import "../styles/home.css";
 import { PROFILE } from "../data/profile";
 import { PROJECTS } from "../data/projects";
 import Navbar from "../components/Navbar";
+import profilePhoto from "../assets/fotoo.jpg";
 
 interface SectionProps {
   number: string;
@@ -51,6 +52,16 @@ export default function Home({ current, onNavigate }: HomeProps) {
 
       <aside className="sidebar">
         <div>
+          <div className="profile-avatar-wrap">
+            <div className="profile-avatar" aria-label="Espacio para foto de perfil">
+              <img className="profile-photo" src={profilePhoto} alt={`Foto de ${PROFILE.name}`} />
+            </div>
+            <span className="avatar-orbit avatar-orbit-one" aria-hidden="true" />
+            <span className="avatar-orbit avatar-orbit-two" aria-hidden="true" />
+            <span className="avatar-dot avatar-dot-one" aria-hidden="true" />
+            <span className="avatar-dot avatar-dot-two" aria-hidden="true" />
+          </div>
+
           <h1 className="name">
             {PROFILE.name}
           </h1>
