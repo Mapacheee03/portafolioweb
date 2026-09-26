@@ -3,6 +3,7 @@ import "../styles/home.css";
 
 import { PROFILE } from "../data/profile";
 import { PROJECTS } from "../data/projects";
+import Navbar from "../components/Navbar";
 
 interface SectionProps {
   number: string;
@@ -35,14 +36,16 @@ function Section({
 }
 
 interface HomeProps {
+  current: string;
   onNavigate?: (id: string) => void;
 }
 
-export default function Home({ onNavigate }: HomeProps) {
+export default function Home({ current, onNavigate }: HomeProps) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <div className="portfolio">
+      <Navbar current={current} onNavigate={(id) => onNavigate?.(id)} />
 
       {/* SIDEBAR */}
 
